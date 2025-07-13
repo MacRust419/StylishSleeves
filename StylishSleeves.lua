@@ -67,6 +67,7 @@ function SMODS.INIT.StylishSleeves()
 
 	local Back_trigger_effect_ref = Back.trigger_effect
 	function Back.trigger_effect(arg_56_0, args)
+		if G.GAME.challenge ~= "c_sleeves_1" then return Back_trigger_effect_ref(arg_56_0, args) end
 		if G.GAME.challenge == "c_sleeves_1" then
 			if args.context == 'final_scoring_step' then
 				local tot = args.chips + args.mult
